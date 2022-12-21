@@ -28,6 +28,10 @@ export class ApiSessionController {
   startNormalSession(@Req() request: IUserRequest): any {
 
     this.startGame = true;
+    this.otherPlayerTurn = false;
+    this.board = [];
+    this.scorePlayerOne = 0;
+    this.scorePlayerTwo = 0;
 
     return 'Game started!!!';
   }
@@ -58,6 +62,7 @@ export class ApiSessionController {
   async getCurrentSession(@Req() req: any) {
 
     const hasWinner = checkWinner(this.board, this.defaultPlayerSelection);
+    let matchDraw = false;
     let playerWinner;
 
     if (hasWinner) {
@@ -68,15 +73,17 @@ export class ApiSessionController {
         playerWinner = 'PLAYER TWO';
         this.scorePlayerTwo += this.scorePlayerTwo;
       }      
+    } else {
+      matchDraw = this.board.filter(val => val).length === 9;
     }
     
-    return { currentPlayer: this.defaultPlayerSelection, board: this.board, startGame: this.startGame, hasWinner, playerWinner };
+    return { currentPlayer: this.defaultPlayerSelection, board: this.board, startGame: this.startGame, hasWinner, playerWinner, matchDraw };
   }
 
   @Post('/players/setanothermatch')
-  async setAnotherMatch(@Param('idx') idx: number) {
+  async setAnotherMatch() {
 
-    this.board[idx] = this.defaultPlayerSelection; //store current player selection to board first then switch to other player selection (either X or O) 
+    this.board = [];
     return 'Success!!';
   }
 
