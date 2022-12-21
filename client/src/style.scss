@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Mulish:wght@300;400;500&display=swap');
+
+
+
+
+body {
+  // background-color: aquamarine;
+}
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+
+  &--player {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24px;
+  }
+}
+
+.color {
+  &--primary {
+    color: #39BCD4;
+  }
+  &--secondary {
+    color: #3A89D5;
+  }
+  &--tertiary {
+    color: #A2B5B8;
+  }
+}
+.bg {
+  &--tertiary {
+    background: #DDDDDD;
+  }
+}
+.fade {
+  opacity: .5;
+}
+
+.scoreboard {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__content:not(:first-child) {
+    margin-left: 30px;
+  }
+}
+
+.tictactoe-board {
+  font-family: 'Fredoka One', cursive;
+  margin-top: 50px;
+  font-size: 36px;
+
+  div {
+    display: flex;
+  }
+  div > span {
+    display: block;
+    position: relative;
+    border: 2px solid #DDDDDD;
+    padding: 20px;  
+  }
+}
+
+.board-section {
+  span {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.player-turn-indicator {
+  margin-top: 40px;
+  border-radius: 20px;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+.mobile-container {
+  margin: 50px 0;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 750px;
+  width: 414px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-select {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: #4C6A87;
+    padding-right: 20px;
+  }
+
+  &__desc {
+    margin-top: 40px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #4C6A87;
+  }
+
+  &__options-container {
+    margin-top: 100px;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  &__options {
+    font-size: 96px;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+  }
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 220px;
+
+  &__player-turn {
+    display: flex;
+    align-items: center;
+    font-family: 'Fredoka One', cursive;
+    color: #A2B5B8;
+    border: 1px solid #A2B5B8;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: #A2B5B8;
+    color: #fff;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
